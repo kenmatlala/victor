@@ -1,0 +1,811 @@
+/**************************
+    imports for css
+****************************/
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+/**************************
+    navigation area
+****************************/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 24px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+.hamburger-menu svg {
+    fill: none;
+    stroke: white;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    transition: all 1s ease;
+}
+
+.line {
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: text-decoration 0.4s ease-in, color 0.4s ease-in;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #333;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        display: none; /* Hidden by default */
+        height: 30vh; /* Takes half the screen height */
+        transition: all 0.7s ease-in-out;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger menu on small screens */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    .hamburger-menu.active .line1 {
+        transform: translateY(10px) rotate(45deg);
+        transform-origin: center;
+    }
+
+    .hamburger-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .line3 {
+        transform: translateY(-10px) rotate(-45deg);
+        transform-origin: center;
+    }
+}
+
+/* bounce effect with keyframe on nav link */
+.nav-links a {
+    animation-name: bounceft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 20ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+@keyframes bounceft {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(23px);
+    }
+    60% {
+        transform: translateY(15px);
+    }
+}
+
+/*****************************
+Body
+ *****************************/
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+/*    end nav code */
+
+/*--------------------------------------------------------------
+# Home section
+--------------------------------------------------------------*/
+
+.home-container {
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.header {
+    position: relative; /* Ensure the header content is positioned correctly */
+    z-index: 2; /* Ensure it's above the overlay */
+    text-align: center; /* Center the text */
+    padding: 40px; /* Add some padding */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.logobod {
+    display: block;
+    position: relative; /* Fixed position within the container */
+    max-width: 390px;
+    margin: 0 auto;
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Ensure it's above the overlay */
+}
+
+.welcome-message {
+    font-size: 24px;
+    color: whitesmoke;
+}
+
+.intro {
+    color: white;
+}
+
+#home {
+    position: relative;
+    background-image: url("img/backdrop.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+/* Create the overlay using a pseudo-element */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0)); /* Adjust the color and opacity here */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
+
+/* Ensure content inside #home is above the overlay */
+#home > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure content inside #home is above the overlay */
+#home > .home-container {
+    position: relative;
+    z-index: 2;
+    height: 100%; /* Ensure the container takes the full height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logobod {
+        max-width: 80%; /* Adjust size for smaller screens */
+    }
+}
+
+.slider {
+    width: 100%;
+    border: 1px solid red;
+    height: var(--height); /* declaring the variable we put in our html*/
+    background-color: white;
+    overflow: hidden;
+
+}
+
+.slider .list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+}
+
+.slider .list .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 2));
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -0.5);
+    }
+}
+
+.slider .list .item img {
+    width: 100%;
+}
+
+.slider:hover .item {
+    animation-play-state: paused !important;;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .slider {
+        --width: 100px; /* Adjust the width as needed for smaller screens */
+        --height: 60px; /* Adjust the height as needed for smaller screens */
+    }
+}
+
+/*--------------------------------------------------------------
+# About section
+--------------------------------------------------------------*/
+
+#about {
+    padding: 50px 20px; /* Adjust padding as needed */
+
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto; /* Center the container */
+    gap: 20px; /* Gap between text and image */
+}
+
+.about-info {
+    flex: 1; /* Take up available space */
+    padding-right: 20px; /* Space between text and image */
+}
+
+.about-info h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Text color */
+}
+
+.about-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666; /* Text color */
+    width: 400px;
+}
+
+/* this is the image animation visual */
+
+.wrapper {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrap-container {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow-x: auto;
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+}
+
+.card > .row {
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: whitesmoke;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 400px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .7s ease;
+}
+
+.description p {
+    color: black;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+.RInput {
+    display: none;
+}
+
+.RInput:checked + .card {
+    width: 600px;
+}
+
+.RInput:checked + .card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url("./img/1.jpg");
+}
+
+.card[for="c2"] {
+    background-image: url("./img/11.jpg");
+}
+
+.card[for="c3"] {
+    background-image: url("./img/18.jpg");
+}
+
+.card[for="c4"] {
+    background-image: url("./img/20.jpg");
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-info {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .wrap-container {
+        justify-content: center;
+    }
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+#services .services-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#services .services-header h2,
+#services .services-header p {
+    margin: 0;
+}
+
+#services .services-header h2 {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Basic container styling */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%; /* Ensure container takes full width */
+    max-width: 1200px; /* Optional max-width for better centering */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Styling for service boxes */
+.service-box {
+    flex: 1 1 calc(33.333% - 20px); /* Change from 50.333% to 33.333% */
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.title a {
+    text-decoration: none;
+    color: #333;
+}
+
+.description {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .service-box {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-box {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service-box {
+        flex: 1 1 100%;
+    }
+}
+
+/*------ end services ------*/
+
+/*--------------------------------------------------------------
+# Training
+--------------------------------------------------------------*/
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.banner .newSlider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left:43%;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 7;
+}
+@keyframes autoRun {
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    } to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+          }
+}
+
+.banner .newSlider .newItem {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(550px);
+}
+
+.banner .newSlider .newItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.banner .new-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6;
+}
+
+.banner .new-content h1{
+    font-family: 'ICA Rubrik', serif;
+    font-size: 16em;
+    line-height: 1em;
+    color: #333333;
+    position: relative;
+}
+
+.banner .new-content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 5  ;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+.banner .new-content .auther{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+
+.banner .new-content h2{
+    font-size: 3em;
+}
+
+.banner .new-content .training-model{
+    background-image: url("./img/traininglogo.png");
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 4;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .service-item {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# contact section
+--------------------------------------------------------------*/
+#contact-form {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#contact-form h2 {
+    text-align: center;
+}
+
+#headingContact {
+    text-align: center;
+    color: #333333;
+}
+
+@keyframes slideInLeft { /*this is us animating from left to right */
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* animating the heading of the contact*/
+#headingContact {
+    animation-name: slideInLeft;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-delay: 20ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* below is to animate the changing of the color when we hover over the submit button*/
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    transition-delay: 20ms;
+
+}
+
+button[type="submit"]:hover {
+    background-color: orange;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.invalid-input {
+    border: 1px solid red;
+}
+
+/**********************************
+    footer
+***********************************/
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid orange;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: orange;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #222;
+    color: #bbb;
+}
+
+/*------- end footer -------*/
