@@ -1,0 +1,35 @@
+<section id="home">
+    <div class="home-container">
+        <div class="header">
+            <img src="./img/LOGO.png" alt="TLFM Energy Logo" class="logobod">
+            <h1 class="welcome-message">Welcome to TLFM Energy</h1>
+            <p class="intro">Your trusted partner for solar installation and training.</p>
+        </div>
+    </div>
+    <div class="slider" style="--width: 100px; --height: 50px; --quantity: 10;">
+        <div class="list">
+            <div class="item" style=" --position: 1"><img src="img/Logo/1.png" alt=""></div>
+            <div class="item" style=" --position: 2"><img src="img/Logo/2.png" alt=""></div>
+            <div class="item" style=" --position: 3"><img src="img/Logo/3.jpg" alt=""></div>
+            <div class="item" style=" --position: 4"><img src="img/Logo/4.jpeg" alt=""></div>
+            <div class="item" style=" --position: 5"><img src="img/Logo/5.png" alt=""></div>
+            <div class="item" style=" --position: 6"><img src="img/Logo/1.png" alt=""></div>
+            <div class="item" style=" --position: 7"><img src="img/Logo/2.png" alt=""></div>
+            <div class="item" style=" --position: 8"><img src="img/Logo/3.jpg" alt=""></div>
+            <div class="item" style=" --position: 9"><img src="img/Logo/4.jpeg" alt=""></div>
+            <div class="item" style=" --position: 10"><img src="img/Logo/5.png" alt=""></div>
+        </div>
+    </div>
+</section>
+
+<section class="flex flex-wrap justify-around p-5">
+  <div class="flex-1 min-w-[30%] m-2 p-5 bg-gray-200 rounded-lg transform transition-transform hover:scale-105">
+    <!-- Your animated content -->
+  </div>
+  <div class="flex-1 min-w-[30%] m-2 p-5 bg-gray-200 rounded-lg transform transition-transform hover:scale-105">
+    <!-- Your animated content -->
+  </div>
+  <div class="flex-1 min-w-[30%] m-2 p-5 bg-gray-200 rounded-lg transform transition-transform hover:scale-105">
+    <!-- Your animated content -->
+  </div>
+</section>
