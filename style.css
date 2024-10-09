@@ -76,44 +76,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: #333;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 20px;
-        display: none; /* Hidden by default */
-        height: 30vh; /* Takes half the screen height */
-        transition: all 0.7s ease-in-out;
-    }
 
-    .hamburger-menu {
-        display: block; /* Show the hamburger menu on small screens */
-    }
-
-    .nav-links.active {
-        display: flex; /* Show the nav links when active */
-    }
-
-    .hamburger-menu.active .line1 {
-        transform: translateY(10px) rotate(45deg);
-        transform-origin: center;
-    }
-
-    .hamburger-menu.active .line2 {
-        opacity: 0;
-    }
-
-    .hamburger-menu.active .line3 {
-        transform: translateY(-10px) rotate(-45deg);
-        transform-origin: center;
-    }
-}
 
 /* bounce effect with keyframe on nav link */
 .nav-links a {
@@ -230,12 +193,6 @@ section {
     text-align: center; /* Center text */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .logobod {
-        max-width: 80%; /* Adjust size for smaller screens */
-    }
-}
 
 .slider {
     width: 100%;
@@ -278,13 +235,7 @@ section {
     animation-play-state: paused !important;;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 600px) {
-    .slider {
-        --width: 100px; /* Adjust the width as needed for smaller screens */
-        --height: 60px; /* Adjust the height as needed for smaller screens */
-    }
-}
+
 
 /*--------------------------------------------------------------
 # About section
@@ -422,22 +373,6 @@ section {
     background-image: url("./img/20.jpg");
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .about-info {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .wrap-container {
-        justify-content: center;
-    }
-}
 
 /*--------------------------------------------------------------
 # Services
@@ -505,40 +440,27 @@ section {
     color: #777;
 }
 
-/* Responsive styling */
-@media (max-width: 1024px) {
-    .service-box {
-        flex: 1 1 calc(50% - 20px);
-    }
-}
 
-@media (max-width: 768px) {
-    .service-box {
-        flex: 1 1 calc(50% - 20px);
-    }
-}
 
-@media (max-width: 480px) {
-    .service-box {
-        flex: 1 1 100%;
-    }
-}
 
 /*------ end services ------*/
 
 /*--------------------------------------------------------------
 # Training
 --------------------------------------------------------------*/
+#training {
+    height: 1800px;
+}
+
 .banner {
-    width: 100%;
-    height: 100vh;
     text-align: center;
-    overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 600px;
 
 }
 
-.banner .newSlider {
+.newSlider {
     position: absolute;
     width: 200px;
     height: 250px;
@@ -557,7 +479,7 @@ section {
           }
 }
 
-.banner .newSlider .newItem {
+.newSlider .newItem {
     position: absolute;
     inset: 0 0 0 0;
     transform:
@@ -565,7 +487,14 @@ section {
             translateZ(550px);
 }
 
-.banner .newSlider .newItem img {
+.newItem img {
+    width: 240px;
+    height: 320px;
+    object-fit: cover;
+
+}
+
+/* .banner .newSlider .newItem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -573,7 +502,6 @@ section {
 }
 
 .banner .new-content {
-    position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -614,33 +542,48 @@ section {
     font-size: 3em;
 }
 
-.banner .new-content .training-model{
-    background-image: url("./img/traininglogo.png");
+*/
+
+.banner {
+    margin-top: 200px; 
+    margin-bottom: 200px;
+}
+
+.new-content h1 {
+    font-size: 5em;
+    color: #333333;
+    font-family: 'ICA Rubrik', serif;
+    position: relative;
+    text-align: center;
+}
+
+.new-content h2 {
+    font-size: 3em;
+    text-align: center;
+    color: #333333;
+}
+
+.new-content{
+    padding-top: 100px;
     width: 100%;
-    height: 75vh;
-    position: absolute;
-    bottom: 200px;
-    left: 0;
-    background-size: auto 130%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    z-index: 4;
+    height: 1000px;
+    margin-bottom: 2000px;
 }
 
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  .service-item {
-    flex: 1 1 45%;
-  }
+.new-content p {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-@media (max-width: 480px) {
-  .service-item {
-    flex: 1 1 100%;
-    margin: 10px 0;
-  }
-}
+.training-model img {
+    display: flex;
+    margin: auto;
+    height: 300px;
+    width: 600px;
+    object-fit: cover;
+    overflow: hidden;
+} 
+
 
 
 
@@ -809,3 +752,113 @@ button[type="submit"]:hover {
 }
 
 /*------- end footer -------*/
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .service-box {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .slider {
+        --width: 100px; /* Adjust the width as needed for smaller screens */
+        --height: 60px; /* Adjust the height as needed for smaller screens */
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 45%;
+    }
+
+    /*hamburger menu*/
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #333;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        display: none; /* Hidden by default */
+        height: 30vh; /* Takes half the screen height */
+        transition: all 0.7s ease-in-out;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger menu on small screens */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    .hamburger-menu.active .line1 {
+        transform: translateY(10px) rotate(45deg);
+        transform-origin: center;
+    }
+
+    .hamburger-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .line3 {
+        transform: translateY(-10px) rotate(-45deg);
+        transform-origin: center;
+    }
+    /*logobod */
+    .logobod {
+        max-width: 80%; /* Adjust size for smaller screens */
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-info {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .wrap-container {
+        justify-content: center;
+    }
+
+    .service-box {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .banner {
+        display: none;
+    }
+    .training-model img {
+        width: 437px;
+        height: 187px;
+        
+    }
+
+    #training {
+        height: 700px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .service-box {
+        flex: 1 1 100%;
+    }
+    .training-model {
+        width: 100vw;
+        margin-left: -56px;
+    }
+}
