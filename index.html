@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title> TLFM Energy</title>
     <link rel="stylesheet" href="style.css"/>
+     <!-- AOS (animation)-->
+	  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
@@ -200,16 +202,12 @@
             <div class="newItem" style="--position: 9"><img src="img/backdrop.jpg" alt="image"></div>
             <div class="newItem" style="--position: 10"><img src="img/27.jpg" alt="image"></div>
         </div>
-        <br>
-        <div class="new-content">
-            <h1 data-content="TRAINING">TRAINING</h1>
-            <div class="auther">
-                <p><b>EDUCATION</b></p>
-                <p>Real experience based Training</p>
-            </div>
-            <div class="training-model"></div>
-        </div>
-
+    </div>
+    <div class="new-content">
+        <div class="training-model" data-aos="fade-down"><img src="/img/traininglogo.png" alt=""></div>
+        <h1><span  data-aos="fade-up" data-aos-delay="100">T</span><span data-aos="fade-up" data-aos-delay="150">R</span><span data-aos="fade-up" data-aos-delay="200" >A</span><span data-aos="fade-up" data-aos-delay="250">I</span><span data-aos="fade-up" data-aos-delay="300">N</span><span  data-aos="fade-up" data-aos-delay="350">I</span><span data-aos="fade-up" data-aos-delay="400">N</span><span data-aos="fade-up" data-aos-delay="450">G</span></h1>
+        <h2 data-aos="fade-up"><b>EDUCATION</b></h2>
+        <p data-aos="fade-up">Real experience based Training</p>
     </div>
 </section>
 <!-- end training section-->
@@ -272,5 +270,10 @@
 </footer>
 
 </body>
+<!--aos script-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="./script.js"></script>
 </html>

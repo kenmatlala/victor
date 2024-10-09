@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const serviceBoxes = document.querySelectorAll('.service-box');
-    serviceBoxes.forEach((box, index) => {
-      box.style.transitionDelay = `${index * 100}ms`;
-      box.classList.add('aos-init', 'aos-animate');
-    });
-  });
+// document.addEventListener('DOMContentLoaded', function() {
+//     const serviceBoxes = document.querySelectorAll('.service-box');
+//     serviceBoxes.forEach((box, index) => {
+//       box.style.transitionDelay = `${index * 100}ms`;
+//       box.classList.add('aos-init', 'aos-animate');
+//     });
+//   });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     console.log('Message received:', message);
